@@ -10,6 +10,8 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import {  AboutComponent } from './about/about.component';
+
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BlogEditComponent,
     BlogCreateComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -28,6 +31,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
       {path:'', redirectTo:'home', pathMatch:'full'},
       {path:'blog/:blogId', component:BlogViewComponent},
       {path:'create', component:BlogCreateComponent}, 
+      {path:'about', component:AboutComponent}, 
       {path:'edit/:blogId', component:BlogEditComponent},
       {path:'**', component:NotFoundComponent},
     ])

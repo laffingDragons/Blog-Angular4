@@ -1,3 +1,25 @@
-<p>
-  blog-view works!
-</p>
+<div class="container">
+    <div class="row" *ngIf="currentBlog">
+        <div class="col-md-12">
+            <h2 class="text-center">{{ currentBlog.title }}</h2>
+            <p class="text-center"> Posted by <span><b>{{ currentBlog.author }}</b></span> on {{ currentBlog.created | date }}</p>
+            <p class="text-center" *ngIf="currentBlog.tags.length != undefined && currentBlog.tags.length > 0">Tags : <span *ngFor="let tag of currentBlog.tags; let first=first; let last=last">{{ tag }} {{ last ? '':', '}}</span></p>
+            <hr>
+            <div class="text-center" [innerHtml]="currentBlog.bodyHtml"></div>
+            <hr>
+            <h5 class="text-center">Category - {{ currentBlog.category }}</h5>
+        </div>
+    </div>
+    <hr>
+    <div class="row" *ngIf="currentBlog" class="text-center">
+        <div class="col-md-4">
+            <a class="btn btn-primary" [routerLink]="['/edit',currentBlog.blogId]">Edit</a>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-warning">Delete</a>
+        </div>
+        <div class="col-md-4">
+            <a class="btn btn-success" [routerLink]="['/home']">Go back</a>
+        </div>
+    </div>
+</div>

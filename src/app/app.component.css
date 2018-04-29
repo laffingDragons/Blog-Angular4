@@ -1,4 +1,7 @@
-.head-color {
+.header {
+    background-color: #04192E;
+    display: block;
+    padding: 3%;
     color: white;
-    background-color: black;
+    font-size: 26px;
 }
