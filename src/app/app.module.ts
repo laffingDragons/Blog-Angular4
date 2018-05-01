@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+
 // router module
 import { RouterModule, Routes } from '@angular/router';
 
@@ -11,6 +12,11 @@ import { BlogCreateComponent } from './blog-create/blog-create.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {  AboutComponent } from './about/about.component';
+
+// http services
+import { BlogService } from './blog.service';
+import { BlogHttpService } from './blog-http.service';
+
 
 
 
@@ -36,7 +42,7 @@ import {  AboutComponent } from './about/about.component';
       {path:'**', component:NotFoundComponent},
     ])
   ],
-  providers: [],
+  providers: [BlogService, BlogHttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
